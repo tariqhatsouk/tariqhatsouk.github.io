@@ -1,0 +1,360 @@
+
+/* 1. Light Theme Colors */
+
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --alternate: #eaf1f8;
+    --text: #17263c;
+    --muted: #526078;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --button-text: #ffffff;
+    --border: #d9e2ee;
+}
+
+/* 2. Dark Theme Colors */
+
+body.dark-theme {
+    --bg: #0b1526;
+    --surface: #142238;
+    --alternate: #101e33;
+    --text: #f0f6ff;
+    --muted: #c0cede;
+    --accent: #63b3ff;
+    --accent-hover: #93cbff;
+    --button-text: #0b1526;
+    --border: #31445d;
+}
+
+/* 3. General Styling */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 75px 0;
+    scroll-margin-top: 110px;
+}
+
+.section-alt {
+    background-color: var(--alternate);
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* 4. Header and Navigation */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 18px 0;
+}
+
+.logo {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+#theme-toggle {
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--alternate);
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* 5. Home Section */
+
+.hero {
+    padding: 110px 0;
+    background: linear-gradient(
+        135deg,
+        var(--surface),
+        var(--alternate)
+    );
+}
+
+.hero .container {
+    max-width: 1100px;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    max-width: 800px;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 720px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: var(--button-text);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* 6. About Me */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    color: var(--muted);
+}
+
+/* 7. Skills Grid */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 25px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.skill-card h3 {
+    color: var(--accent);
+}
+
+.skill-card p {
+    color: var(--muted);
+}
+
+/* 8. Projects */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 220px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--surface);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    color: var(--accent);
+}
+
+.project-card p {
+    color: var(--muted);
+}
+
+/* 9. Hobbies */
+
+.hobbies-list {
+    padding-left: 25px;
+}
+
+.hobbies-list li {
+    margin-bottom: 12px;
+}
+
+/* 10. Contact Form */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#form-status {
+    min-height: 24px;
+    color: var(--muted);
+}
+
+/* 11. Footer */
+
+.footer {
+    padding: 25px;
+    text-align: center;
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+/* 12. Keyboard Accessibility */
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* 13. Tablet Responsive Design */
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        gap: 25px;
+    }
+}
+
+/* 14. Mobile Responsive Design */
+
+@media (max-width: 600px) {
+    .nav-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-img {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* 15. Reduced Motion Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        transition: none;
+    }
+}
